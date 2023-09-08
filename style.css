@@ -54,3 +54,41 @@ h1 {
 		font-size: 16px;
 	}
 }
+
+/* 移动设备用于横向滚动式布局 */
+@media screen and (max-width: 600px) {
+	body {
+		overflow-x: scroll;
+	}
+}
+
+/* 移动设备用于纵向布局 */
+@media screen and (max-width: 400px) {
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* 用于大屏幕设备 */
+/* @media screen and (min-width: 1200px) {
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+} */
+
+.button {
+	width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+	.button {
+		font-size: 12px;
+	}
+}
