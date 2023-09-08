@@ -1,20 +1,22 @@
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f9f9f9;
+	/* background-color: #f9f9f9; */
+	background-image: url('./img/bg.jpg');
+	background-size: cover;
 }
 
 h1 {
 	text-align: center;
 	margin-top: 50px;
-	color: #0066cc;
-	text-shadow: 1px 1px #ccc;
+	color: #fff;
+	/* text-shadow: 1px 1px #ccc; */
 }
 
 #generateButton {
 	display: block;
 	margin: 50px auto;
 	padding: 10px 20px;
-	background-color: #0066cc;
+	background-color: #0070cc;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -31,9 +33,9 @@ h1 {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
+	/* background-color: #fff; */
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+	/* border-radius: 5px; */
 	text-align: center;
 	font-size: 18px;
 }
@@ -46,6 +48,56 @@ h1 {
 
 #result strong {
 	color: #0066cc;
+}
+
+.ball-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ball {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	border-radius: 50%;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(5px, -5px);
+	}
+	50% {
+		transform: translate(-3px, 2px);
+	}
+	75% {
+		transform: translate(3px, -2px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+.red-ball {
+	background-color: red;
+}
+
+.red-ball + .red-ball {
+	margin-left: 10px;
+}
+
+.blue-ball {
+	margin-top: 20px;
+	background-color: blue;
+}
+
+.blue-ball + .blue-ball {
+	margin-left: 10px;
 }
 
 @media screen and (max-width: 500px) {
@@ -76,12 +128,12 @@ h1 {
 }
 
 /* 用于大屏幕设备 */
-/* @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 	.container {
 		width: 80%;
 		margin: 0 auto;
 	}
-} */
+}
 
 .button {
 	width: 50%;

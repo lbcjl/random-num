@@ -73,11 +73,38 @@ generateButton.addEventListener('click', function () {
   const randomNumberSets = generateThreeRandomNumberSets()
   const selectedNumbers2 = pickFiveNumbersFromRandomSets(randomNumberSets)
 
-  let resultText = `从 1-12 中随机生成两个数字：${selectedNumbers1.join(
-    ', '
-  )}\n`
-  resultText += `从 1-35 中随机生成五个数字：${selectedNumbers2.join(
-    ', '
-  )}`
-  result.innerText = resultText
+  let resultText = `
+    <div class="ball-list">
+      <div class="ball red-ball">${selectedNumbers1[0]}</div>
+      <div class="ball red-ball">${selectedNumbers1[1]}</div>
+    </div>
+  `
+  resultText += `
+    <div class="ball-list">
+      <div class="ball blue-ball">${selectedNumbers2[0]}</div>
+      <div class="ball blue-ball">${selectedNumbers2[1]}</div>
+      <div class="ball blue-ball">${selectedNumbers2[2]}</div>
+      <div class="ball blue-ball">${selectedNumbers2[3]}</div>
+      <div class="ball blue-ball">${selectedNumbers2[4]}</div>
+    </div>
+  `
+  result.innerHTML = resultText
+
+  // 获取所有球形元素
+  const balls = document.querySelectorAll('.ball');
+
+  // 为每个球形元素生成随机的延迟时间并应用动画
+  balls.forEach(ball => {
+    // 生成随机的延迟时间（单位：秒）
+    const delay = Math.random() * 3;
+
+    // 应用抖动动画样式
+    ball.style.animation = `shake 1s ease-in-out ${delay}s forwards`;
+
+    // 在动画结束时重新设置样式
+    ball.addEventListener('animationend', () => {
+      ball.style.animation = '';
+    });
+  });
 })
+
